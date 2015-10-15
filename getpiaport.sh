@@ -41,14 +41,16 @@ port_forward_assignment( )
 {
   echo 'Loading port forward assignment information..'
   if [ "$(uname)" == "Linux" ]; then
-    local_ip=`ifconfig tun0|grep -oE "inet addr: *10\.[0-9]+\.[0-9]+\.[0-9]+"|tr -d "a-z :"|tee /tmp/vpn_ip`
+    local_ip=`ip addr show tun0|grep -oE "inet *10\.[0-9]+\.[0-9]+\.[0-9]+"|tr -d "a-z :"`
+echo $local_ip
     client_id=`head -n 100 /dev/urandom | md5sum | tr -d " -"`
   fi
   if [ "$(uname)" == "Darwin" ]; then
     local_ip=`ifconfig tun0 | grep "inet " | cut -d\  -f2|tee /tmp/vpn_ip`
     client_id=`head -n 100 /dev/urandom | md5 -r | tr -d " -"`
   fi
-  json=`wget -q --post-data="user=$USER&pass=$PASSWORD&client_id=$client_id&local_ip=$local_ip" -O - 'https://www.privateinternetaccess.com/vpninfo/port_forward_assignment' | head -1`
+json="sdadsfsd"
+  json=`curl --silent --data "user=$USER&pass=$PASSWORD&client_id=$client_id&local_ip=$local_ip" -o - 'https://www.privateinternetaccess.com/vpninfo/port_forward_assignment' | head -1`
   echo $json
 }
 
