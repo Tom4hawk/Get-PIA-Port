@@ -34,12 +34,13 @@ version(){
 
 port_forward_assignment(){
 	echo 'Loading port forward assignment information..'
-	if [ "$(uname)" == "Linux" ]; then
+	if [ "$(uname)" == "Linux" ] && ( command -v ip >/dev/null 2>&1 ); then
 		local_ip=`ip addr show tun0|grep -oE "inet *10\.[0-9]+\.[0-9]+\.[0-9]+"|tr -d "a-z "`
 		client_id=`head -n 100 /dev/urandom | md5sum | tr -d " -"`
-	fi
-
-	if [ "$(uname)" == "Darwin" ]; then
+	elif [ "$(uname)" == "Linux" ] && ( command -v ifconfig >/dev/null 2>&1 ); then
+		local_ip=`ifconfig tun0|grep -oE "inet addr: *10\.[0-9]+\.[0-9]+\.[0-9]+"|tr -d "a-z :"`
+		client_id=`head -n 100 /dev/urandom | md5sum | tr -d " -"`
+	elif [ "$(uname)" == "Darwin" ]; then
 		local_ip=`ifconfig tun0 | grep "inet " | cut -d\  -f2|tee /tmp/vpn_ip`
 		client_id=`head -n 100 /dev/urandom | md5 -r | tr -d " -"`
 	fi
