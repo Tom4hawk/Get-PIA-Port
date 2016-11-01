@@ -9,10 +9,10 @@
 # Site: https://github.com/Tom4hawk/Get-PIA-Port
 #
 # Requirements:
-#   Your Private Internet Access user and password
+#	Your Private Internet Access user and password
 #
 # Usage:
-#  ./getpiaport.sh [OPTIONS]
+#	./getpiaport.sh [OPTIONS]
 #
 # Arguments:
 #	--user, -p (pia-username)
