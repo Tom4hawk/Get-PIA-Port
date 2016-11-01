@@ -45,7 +45,8 @@ Your Private Internet Access user and password
 ```
 ###Credentials read from file
 Credentials file:
-```/etc/openvpn/login.conf
+```
+  /etc/openvpn/login.conf
 x3523666
 x784235
 ```
