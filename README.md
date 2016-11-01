@@ -1,6 +1,6 @@
 # Get-PIA-Port
 Enable port forwarding for [Private Internet Access](https://www.privateinternetaccess.com/)
-##Script is based on:
+##Script is based on
 [Script](https://www.privateinternetaccess.com/installer/port_forward.sh)  
 [PIA forum post](https://www.privateinternetaccess.com/forum/discussion/3359/port-forwarding-without-application-pia-script-advanced-users)
 ##Changes from original script
@@ -11,15 +11,16 @@ Enable port forwarding for [Private Internet Access](https://www.privateinternet
 - better error handling
 - script can read PIA credentials from text file, same format can be used in OpenVPN which makes it very convenient
 - FreeBSD support
-##Requirements:  
+
+##Requirements
 Your Private Internet Access user and password
-##Usage:  
+##Usage
 1. Download Get-PIA-Port
 2. `chmod +x getpiaport.sh`
 3. Make sure you are connected in one of the gateways that supports port forwarding
 4. `./getpiaport.sh [OPTIONS]`
 
-##Arguments:
+##Arguments
 ```
 --user, -p (pia-username)
     user for your PIA account
