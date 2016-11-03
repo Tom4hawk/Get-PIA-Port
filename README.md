@@ -45,8 +45,8 @@ Your Private Internet Access user and password
 ```
 ###Credentials read from file
 Credentials file:
+_/etc/openvpn/login.conf_
 ```
-  /etc/openvpn/login.conf
 x3523666
 x784235
 ```
@@ -54,7 +54,7 @@ Run:
 ```
 ./getpiascript.sh --login-file /etc/openvpn/login.conf
 ```
-###Gateways that supports port forwarding
+##Gateways that supports port forwarding
 ```
 CA Toronto
 Ca Montreal
