@@ -44,7 +44,7 @@ Your Private Internet Access user and password
 ./getpiascript.sh --user x3523666 --pass x784235
 ```
 ###Credentials read from file
-Credentials file:
+Credentials file:  
 _/etc/openvpn/login.conf_
 ```
 x3523666
