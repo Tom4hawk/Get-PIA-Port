@@ -3,7 +3,7 @@
 # Enable port forwarding for Private Internet Access (https://www.privateinternetaccess.com/)
 #
 # Script is based on:
-#	https://privateinternetaccess.com/installer/port_forwarding.sh
+#	https://privateinternetaccess.com/installer/port_forwarding.sh (version 2.1)
 #	https://www.privateinternetaccess.com/forum/discussion/23431/new-pia-port-forwarding-api?new=1
 #
 # Site: https://github.com/Tom4hawk/Get-PIA-Port
